@@ -1,0 +1,6 @@
+{
+  "name": "Rock Paper Scissors",
+  "description": "Rock Paper Scissors game with rich data visualizations, matchup analytics, streak tracking, and dark mode toggle.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
