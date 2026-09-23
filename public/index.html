@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Rock Paper Scissors Arena | Web Edition</title>
+  <meta name="description" content="A data-driven Rock Paper Scissors game with real-time statistics, win ratio donut charts, score trajectory lines, matchup matrices, and modern neo-sport design.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="assets/portfolio/rps_app_icon.jpg" type="image/jpeg">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Top Navigation Bar -->
+    <header class="top-bar">
+      <div class="brand">
+        <div class="brand-icon">⚔️</div>
+        <div class="brand-info">
+          <h1>RPS Arena</h1>
+          <p>Data-Driven Combat</p>
+        </div>
+      </div>
+      <div class="top-actions">
+        <a href="portfolio_assets.html" class="portfolio-link-btn" title="View Portfolio & Design System Assets">🎨 Design Assets</a>
+        <button id="mute-btn" class="icon-btn" title="Toggle Sound">🔊</button>
+        <button id="theme-toggle-btn" class="icon-btn" title="Toggle Theme">🌙</button>
+      </div>
+    </header>
+
+    <!-- KPI Summary Row -->
+    <section class="kpi-row" aria-label="Key Performance Indicators">
+      <div class="kpi-card">
+        <div class="kpi-label">Win Rate</div>
+        <div id="kpi-win-rate" class="kpi-value" style="color: var(--color-win)">0%</div>
+        <div id="kpi-win-record" class="kpi-sub">0W - 0L - 0T</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Current Streak</div>
+        <div id="kpi-streak" class="kpi-value">0</div>
+        <div id="kpi-streak-sub" class="kpi-sub">Neutral</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Best Streak</div>
+        <div id="kpi-best-streak" class="kpi-value" style="color: var(--color-win)">0</div>
+        <div class="kpi-sub">Consecutive Wins</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Net Score</div>
+        <div id="kpi-net-score" class="kpi-value">0</div>
+        <div id="kpi-total-rounds" class="kpi-sub">0 Rounds</div>
+      </div>
+    </section>
+
+    <!-- Battle Arena Card -->
+    <main class="card arena-card">
+      <div class="battle-display">
+        <div class="fighter-slot player">
+          <div class="fighter-tag">PLAYER</div>
+          <div id="user-choice" class="fighter-circle">✊</div>
+          <div id="user-slot-name" class="fighter-name">Rock</div>
+        </div>
+
+        <div id="vs-badge" class="vs-badge">VS</div>
+
+        <div class="fighter-slot computer">
+          <div class="fighter-tag">COMPUTER</div>
+          <div id="computer-choice" class="fighter-circle">✌️</div>
+          <div id="computer-slot-name" class="fighter-name">Scissors</div>
+        </div>
+      </div>
+
+      <!-- Result Banner -->
+      <div id="result-banner" class="result-banner win">
+        <div id="result-title" class="result-title">YOU WIN!</div>
+        <div id="result-desc" class="result-desc">Rock beats Scissors</div>
+      </div>
+
+      <!-- Move Selection -->
+      <div class="arena-prompt">Choose Your Move (or press R, P, S)</div>
+      <div class="move-buttons-grid">
+        <button class="move-btn rock" data-move="rock" title="Rock (Keyboard: R)">
+          <span class="move-emoji">✊</span>
+          <span class="move-label">Rock</span>
+          <span class="move-key">R</span>
+        </button>
+
+        <button class="move-btn paper" data-move="paper" title="Paper (Keyboard: P)">
+          <span class="move-emoji">✋</span>
+          <span class="move-label">Paper</span>
+          <span class="move-key">P</span>
+        </button>
+
+        <button class="move-btn scissors" data-move="scissors" title="Scissors (Keyboard: S)">
+          <span class="move-emoji">✌️</span>
+          <span class="move-label">Scissors</span>
+          <span class="move-key">S</span>
+        </button>
+      </div>
+
+      <!-- Arena Utility Toolbar -->
+      <div class="arena-toolbar">
+        <button id="simulate-btn" class="tool-btn" title="Simulate 5 fast rounds with random moves">
+          🎲 Simulate +5
+        </button>
+        <button id="reset-btn" class="tool-btn" title="Clear all battle records and reset statistics">
+          🔄 Reset Stats
+        </button>
+      </div>
+    </main>
+
+    <!-- Data Visualization Dashboard -->
+    <section class="card viz-card">
+      <div class="viz-header">
+        <div class="viz-title-box">
+          <div class="viz-icon">📊</div>
+          <div>
+            <h2 style="font-size: 1.1rem; font-weight: 800;">Battle Analytics</h2>
+            <p style="font-size: 0.75rem; color: var(--text-secondary);">Real-time performance and strategy breakdown</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chart View Tabs -->
+      <nav class="viz-tabs" aria-label="Analytics Tabs">
+        <button class="viz-tab-btn active" data-tab="0">Win Ratio (Donut)</button>
+        <button class="viz-tab-btn" data-tab="1">Trajectory (Line)</button>
+        <button class="viz-tab-btn" data-tab="2">Move Frequency</button>
+        <button class="viz-tab-btn" data-tab="3">Matchup Matrix</button>
+      </nav>
+
+      <!-- Dynamic Viz Panel -->
+      <div id="viz-content-panel" class="viz-content-panel">
+        <!-- Rendered by game.js -->
+      </div>
+    </section>
+
+    <!-- Match History Feed -->
+    <section class="card history-card">
+      <div class="history-header">
+        <div>
+          <h2 style="font-size: 1.1rem; font-weight: 800;">Battle History</h2>
+          <p style="font-size: 0.75rem; color: var(--text-secondary);">Recent round outcomes and choices</p>
+        </div>
+        <div id="history-count" style="font-size: 0.8rem; font-weight: 700; color: var(--text-muted);">0 Rounds</div>
+      </div>
+
+      <!-- Filter Chips -->
+      <div class="history-filter-chips">
+        <button class="chip-btn active" data-filter="all">All</button>
+        <button class="chip-btn" data-filter="win">Wins</button>
+        <button class="chip-btn" data-filter="loss">Losses</button>
+        <button class="chip-btn" data-filter="tie">Ties</button>
+      </div>
+
+      <!-- History List -->
+      <div id="history-list" class="history-list">
+        <!-- Rendered by game.js -->
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>Rock Paper Scissors Arena &bull; Web & Mobile Edition</p>
+      <p style="margin-top: 4px;">
+        Deployable on <a href="https://vercel.com" target="_blank" rel="noopener">Vercel</a>, <a href="https://netlify.com" target="_blank" rel="noopener">Netlify</a>, &amp; <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a>
+      </p>
+    </footer>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>

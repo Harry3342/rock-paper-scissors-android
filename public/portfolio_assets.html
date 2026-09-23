@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock Paper Scissors Arena - UI/UX Portfolio Assets</title>
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --surface: #151c2c;
+      --surface-elevated: #1e293b;
+      --primary: #818cf8;
+      --win: #10b981;
+      --loss: #ef4444;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --border: #334155;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 32px 20px;
+    }
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #a78bfa 0%, #818cf8 50%, #06b6d4 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 12px;
+    }
+    p.lead {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      max-width: 680px;
+      margin: 0 auto 20px auto;
+    }
+    .badge-bar {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+    .badge {
+      background: var(--surface-elevated);
+      border: 1px solid var(--border);
+      padding: 6px 14px;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+    .asset-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 36px;
+      margin-bottom: 48px;
+    }
+    @media(min-width: 768px) {
+      .asset-grid-split {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+    .card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      border-bottom: 1px solid var(--border);
+      background: #000;
+    }
+    .card-body {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .card-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .card-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--primary);
+      color: #0f172a;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 12px 20px;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: transform 0.15s ease, filter 0.15s ease;
+    }
+    .download-btn:hover {
+      filter: brightness(1.15);
+      transform: translateY(-2px);
+    }
+    .palette-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .swatch {
+      background: var(--surface-elevated);
+      padding: 12px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+    .color-box {
+      height: 48px;
+      border-radius: 8px;
+      margin-bottom: 8px;
+    }
+    .swatch-name {
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+    .swatch-hex {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-family: monospace;
+    }
+    footer {
+      text-align: center;
+      padding: 32px 0 16px;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Rock Paper Scissors Arena</h1>
+      <p class="lead">UI/UX Asset Showcase & Design System for Personal Portfolio, Behance, and Case Studies.</p>
+      <div class="badge-bar">
+        <span class="badge">Material Design 3</span>
+        <span class="badge">Data Visualization</span>
+        <span class="badge">Dark & Light Theming</span>
+        <span class="badge">Deployable Web Edition</span>
+      </div>
+    </header>
+
+    <div class="asset-grid">
+      <!-- Deployable Web Game ZIP Package -->
+      <div class="card" style="border: 2px solid var(--primary); background: linear-gradient(135deg, rgba(79, 70, 229, 0.15) 0%, rgba(124, 58, 237, 0.1) 100%), var(--surface);">
+        <div class="card-body">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
+            <span style="font-size: 2rem;">📦</span>
+            <div>
+              <h2 class="card-title" style="margin-bottom: 0;">Ready-to-Deploy Web Game Package (.zip)</h2>
+              <span style="font-size: 0.8rem; color: var(--primary); font-weight: 700;">Instant Vercel / Netlify / GitHub Pages Bundle</span>
+            </div>
+          </div>
+          <p class="card-desc">Complete standalone static web game bundle with index.html, styles.css, game.js, charts, and all design assets. Simply drag and drop onto Netlify Drop, or push to Vercel/GitHub Pages with zero configuration.</p>
+          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+            <a class="download-btn" href="assets/portfolio/rps-web-deployable.zip" download="rps-web-deployable.zip">Download Web Game Bundle (.zip)</a>
+            <a class="download-btn" style="background: var(--surface-elevated); color: var(--text-primary); border: 1px solid var(--border);" href="index.html">🎮 Play Web Game Live</a>
+          </div>
+        </div>
+      </div>
+      <!-- Hero Showcase Card -->
+      <div class="card">
+        <img src="assets/portfolio/rps_hero_showcase.jpg" alt="Rock Paper Scissors UI Hero Showcase" />
+        <div class="card-body">
+          <h2 class="card-title">1. Isometric Hero Presentation Banner</h2>
+          <p class="card-desc">High-resolution 16:9 3D presentation asset highlighting the data visualization dashboard cards, dark obsidian aesthetic, match history, and gameplay arena.</p>
+          <a class="download-btn" href="assets/portfolio/rps_hero_showcase.jpg" download="rps_hero_showcase.jpg">Download Hero Banner (.jpg)</a>
+        </div>
+      </div>
+
+      <!-- Project Placeholder Thumbnail Card -->
+      <div class="card">
+        <img src="assets/portfolio/project_placeholder.jpg" alt="Rock Paper Scissors Project Placeholder Thumbnail" />
+        <div class="card-body">
+          <h2 class="card-title">2. Project Placeholder & Feature Thumbnail</h2>
+          <p class="card-desc">High-resolution 16:9 placeholder banner featuring glowing neon geometric symbols of Rock, Paper, and Scissors with modern analytics graphic overlays.</p>
+          <a class="download-btn" href="assets/portfolio/project_placeholder.jpg" download="project_placeholder.jpg">Download Placeholder Image (.jpg)</a>
+        </div>
+      </div>
+
+      <!-- Design System Split -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;">
+        <div class="card">
+          <img src="assets/portfolio/rps_design_system.jpg" alt="Rock Paper Scissors Design System Spec Sheet" />
+          <div class="card-body">
+            <h2 class="card-title">2. Design System & Component Specs</h2>
+            <p class="card-desc">Complete design token reference sheet highlighting typography hierarchy, color scales, and interactive states.</p>
+            <a class="download-btn" href="assets/portfolio/rps_design_system.jpg" download="rps_design_system.jpg">Download Design System Sheet (.jpg)</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="assets/portfolio/rps_app_icon.jpg" alt="App Icon Symbol" style="max-height: 380px; object-fit: contain; padding: 24px; background: #151c2c;" />
+          <div class="card-body">
+            <h2 class="card-title">3. App Icon & Brand Emblem</h2>
+            <p class="card-desc">1:1 square vector emblem combining the iconic Rock, Paper, and Scissors symbols on a gradient indigo canvas.</p>
+            <a class="download-btn" href="assets/portfolio/rps_app_icon.jpg" download="rps_app_icon.jpg">Download App Icon (.jpg)</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Color Palette Spec -->
+      <div class="card" style="padding: 24px;">
+        <h2 class="card-title">Core Color Palette Tokens</h2>
+        <p class="card-desc">Color system tokens used across the application and charts.</p>
+        <div class="palette-grid">
+          <div class="swatch">
+            <div class="color-box" style="background: #4F46E5;"></div>
+            <div class="swatch-name">Brand Indigo</div>
+            <div class="swatch-hex">#4F46E5</div>
+          </div>
+          <div class="swatch">
+            <div class="color-box" style="background: #7C3AED;"></div>
+            <div class="swatch-name">Brand Violet</div>
+            <div class="swatch-hex">#7C3AED</div>
+          </div>
+          <div class="swatch">
+            <div class="color-box" style="background: #10B981;"></div>
+            <div class="swatch-name">Win (Emerald)</div>
+            <div class="swatch-hex">#10B981</div>
+          </div>
+          <div class="swatch">
+            <div class="color-box" style="background: #EF4444;"></div>
+            <div class="swatch-name">Loss (Coral)</div>
+            <div class="swatch-hex">#EF4444</div>
+          </div>
+          <div class="swatch">
+            <div class="color-box" style="background: #F59E0B;"></div>
+            <div class="swatch-name">Tie (Amber)</div>
+            <div class="swatch-hex">#F59E0B</div>
+          </div>
+          <div class="swatch">
+            <div class="color-box" style="background: #8B5CF6;"></div>
+            <div class="swatch-name">Rock Purple</div>
+            <div class="swatch-hex">#8B5CF6</div>
+          </div>
+          <div class="swatch">
+            <div class="color-box" style="background: #06B6D4;"></div>
+            <div class="swatch-name">Paper Cyan</div>
+            <div class="swatch-hex">#06B6D4</div>
+          </div>
+          <div class="swatch">
+            <div class="color-box" style="background: #F43F5E;"></div>
+            <div class="swatch-name">Scissors Rose</div>
+            <div class="swatch-hex">#F43F5E</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>Rock Paper Scissors Arena UI/UX Case Study Assets &bull; Ready for export to Behance, Dribbble, Figma & personal portfolio.</p>
+    </footer>
+  </div>
+</body>
+</html>
